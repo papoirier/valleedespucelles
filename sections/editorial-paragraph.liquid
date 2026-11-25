@@ -1,0 +1,104 @@
+{% liquid
+  if section.settings.background_color != blank
+    render 'contrast-override', background_color: section.settings.background_color, section_id: section.id
+  endif
+%}
+
+{% capture accordion_inline_html %}
+  {% if page.metafields.custom.learn_more != blank %}
+    <details class="editorial-accordion editorial-accordion--inline">
+      <summary class="editorial-accordion__trigger">
+        <span class="editorial-accordion__label--closed">
+          {% if request.locale.iso_code == 'fr' %}Plus +{% else %}More +{% endif %}
+        </span>
+        <span class="editorial-accordion__label--open">
+          {% if request.locale.iso_code == 'fr' %}Moins -{% else %}Less -{% endif %}
+        </span>
+      </summary>
+      <div class="editorial-accordion__content rte">
+        {{ page.metafields.custom.learn_more | metafield_tag }}
+      </div>
+    </details>
+  {% endif %}
+{% endcapture %}
+
+{% capture rendered_blocks %}
+  {% content_for 'blocks' %}
+{% endcapture %}
+
+<div class="section page-width-content{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}">
+  <div
+    class="
+      spacing-style
+      layout-panel-flex
+      layout-panel-flex--column
+      section-content-wrapper
+      editorial-text-wrapper
+      mobile-column
+    "
+    style="
+      {% render 'layout-panel-style', settings: section.settings %}
+      {% render 'spacing-style', settings: section.settings %}
+    "
+  >
+    <div class="editorial-text-inner">
+      {{ rendered_blocks
+        | replace: '<p>[learn_more]</p>', accordion_inline_html
+        | replace: ' [learn_more]', accordion_inline_html
+        | replace: '[learn_more]', accordion_inline_html
+      }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Editorial paragraph",
+  "class": "section-wrapper",
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "placeholder": "t:settings.default"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Editorial paragraph"
+    }
+  ]
+}
+{% endschema %}

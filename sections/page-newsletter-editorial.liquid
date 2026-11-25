@@ -1,0 +1,22 @@
+<section class="section page-width-content editorial-page-newsletter">
+  <div class="section-content-wrapper">
+    <div class="editorial-page-newsletter__block">
+      <div class="editorial-page-newsletter__inner">
+        <p class="editorial-page-newsletter__title">infolettre</p>
+        {% render 'editorial-newsletter-form', form_id: 'page-contact-newsletter' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Editorial newsletter",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Editorial newsletter"
+    }
+  ]
+}
+{% endschema %}

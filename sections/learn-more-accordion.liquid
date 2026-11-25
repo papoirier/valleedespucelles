@@ -1,0 +1,26 @@
+{% if page.metafields.custom.learn_more != blank %}
+  <section class="section section--page-width editorial-accordion-section">
+    <div class="editorial-accordion-section__grid">
+      <details class="editorial-accordion">
+        <summary class="editorial-accordion__trigger">
+          {% if request.locale.iso_code == 'fr' %}Plus{% else %}More{% endif %}
+        </summary>
+        <div class="editorial-accordion__content rte">
+          {{ page.metafields.custom.learn_more | metafield_tag }}
+        </div>
+      </details>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Learn more accordion",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Learn more accordion"
+    }
+  ]
+}
+{% endschema %}

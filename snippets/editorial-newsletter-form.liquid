@@ -1,0 +1,24 @@
+{%- assign form_id = form_id | default: 'editorial-newsletter' -%}
+
+{% form 'customer', id: form_id, class: 'editorial-newsletter' %}
+  <input type="hidden" name="contact[tags]" value="newsletter">
+
+  {% if form.posted_successfully? %}
+    <p class="editorial-newsletter__status">merci pour votre inscription.</p>
+  {% else %}
+    {% if form.errors %}
+      <p class="editorial-newsletter__status">{{ form.errors.messages['email'] }}</p>
+    {% endif %}
+
+    <div class="editorial-newsletter__field">
+      <input
+        type="email"
+        name="contact[email]"
+        placeholder="votre@courriel.com"
+        aria-label="Adresse courriel"
+        required
+      >
+      <button type="submit">s’inscrire</button>
+    </div>
+  {% endif %}
+{% endform %}

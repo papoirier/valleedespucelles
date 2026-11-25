@@ -1,0 +1,66 @@
+{% assign home_entry = shop.metaobjects.home_content['home-content'] %}
+
+{% if home_entry != blank %}
+  <section class="home-editorial page-width">
+    <h1 class="home-editorial__content">
+      {{ home_entry.body_text | metafield_tag | remove: '<div class="metafield-rich_text_field">' | remove: '</div>' | remove: '<p>' | remove: '</p>' }}
+      {%- if localization.available_languages.size > 1 -%}
+        {%- for language in localization.available_languages -%}
+          {%- unless language.iso_code == localization.language.iso_code -%}
+            ›&#8202;<a href="{{ language.root_url }}" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}">
+              {%- if language.iso_code == 'en' -%}English{%- else -%}Français{%- endif -%}
+            </a>
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- endif -%}
+    </h1>
+  </section>
+{% endif %}
+
+<dialog id="newsletter-modal" class="editorial-modal">
+  <div class="editorial-modal__box">
+    <button type="button" class="editorial-modal__close" aria-label="Fermer">✕</button>
+
+    <p class="editorial-modal__title">infolettre</p>
+
+    {% render 'editorial-newsletter-form', form_id: 'modal-newsletter' %}
+  </div>
+</dialog>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('newsletter-modal');
+    if (!modal) return;
+
+    document.querySelectorAll('a[href$="#newsletter-modal"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.showModal();
+      });
+    });
+
+    modal.querySelector('.editorial-modal__close')?.addEventListener('click', () => {
+      modal.close();
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.close();
+    });
+
+    if (window.location.search.includes('customer_posted=true') || modal.querySelector('.editorial-newsletter__status')) {
+      modal.showModal();
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Custom Home",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Custom Home"
+    }
+  ]
+}
+{% endschema %}

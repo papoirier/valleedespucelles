@@ -1,0 +1,332 @@
+@font-face {
+  font-family: 'FF Mark';
+  src: url('https://cdn.shopify.com/s/files/1/1613/9725/files/MarkWeb.woff2?v=1794880575') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/1613/9725/files/MarkWeb.woff?v=1794880123') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FF Mark';
+  src: url('https://cdn.shopify.com/s/files/1/1613/9725/files/MarkWeb-Bold.woff2?v=1794880575') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/1613/9725/files/MarkWeb-Bold.woff?v=1794880123') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Variables typographiques globales (Horizon)
+   ========================================================================== */
+
+:root,
+body,
+[data-scheme] {
+  --font-body--family: 'FF Mark', sans-serif !important;
+  --font-heading--family: 'FF Mark', sans-serif !important;
+  --font-subheading--family: 'FF Mark', sans-serif !important;
+  --font-accent--family: 'FF Mark', sans-serif !important;
+  --font-menu--family: 'FF Mark', sans-serif !important;
+}
+
+/* ==========================================================================
+   Application globale et formulaires
+   ========================================================================== */
+
+body,
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+.localization-form__select,
+.disclosure__button {
+  font-family: 'FF Mark', sans-serif !important;
+}
+
+h5 {
+    font-weight: 700;
+}
+/* ==========================================================================
+   Rendu natif macOS pour le sélecteur de langue
+   ========================================================================== */
+
+select#dropdownSelect,
+select.localization-form__select {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+dropdown-localization-component,
+dropdown-localization-component *,
+localization-form,
+localization-form * {
+  font-family: 'FF Mark', sans-serif !important;
+  --font-family: 'FF Mark', sans-serif !important;
+}
+
+/* --- Section éditoriale (Accueil) --- */
+.home-editorial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.home-editorial__content {
+  width: 100%;
+  max-width: 30ch;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.home-editorial__content,
+.home-editorial h1 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.home-editorial h1 a,
+.rte a {
+  color: #b71918;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.home-editorial h1 a:hover,
+.rte a:hover {
+  color: #dc1918;
+}
+
+html:not(.hide-home-header) .home-editorial {
+  min-height: 80vh;
+}
+
+
+/* --- Modale Infolettre (<dialog>) --- */
+.editorial-modal {
+  border: 1px solid #121212;
+  padding: 0;
+  max-width: 440px;
+  width: calc(100% - 3rem);
+  background: #ffffff;
+  color: #121212;
+}
+
+.editorial-modal::backdrop {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px);
+}
+
+.editorial-modal__box {
+  position: relative;
+  padding: 2.5rem 2rem;
+}
+
+.editorial-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #121212;
+}
+
+.editorial-modal__close:hover {
+  color: #dc1918;
+}
+
+.editorial-modal__title,
+.editorial-page-newsletter__title {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+/* --- Section Infolettre (Page Nous joindre) --- */
+.editorial-page-newsletter {
+  padding-top: 0;
+  padding-bottom: 80px;
+}
+
+.editorial-page-newsletter__inner {
+  max-width: 440px;
+}
+
+/* --- Formulaire Infolettre partagé (Modale + Page Nous joindre) --- */
+.editorial-newsletter__field {
+  display: flex;
+  gap: 0.75rem;
+  border-bottom: 1px solid #121212;
+  padding-bottom: 0.4rem;
+}
+
+.editorial-newsletter__field input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.5rem;
+  color: #121212;
+}
+
+.editorial-newsletter__field button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  cursor: pointer;
+  color: #b71918;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.editorial-newsletter__field button:hover {
+  color: #dc1918;
+}
+
+.editorial-newsletter__status {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #b71918;
+}
+
+/* --- Accordéon éditorial (style lien standard p a + bascule Plus + / Moins -) --- */
+.editorial-accordion {
+  width: 100%;
+  max-width: var(--max-width--body-normal);
+}
+
+/* Garde le paragraphe précédent en ligne et aligné à gauche avec le bouton Plus + sans double marge */
+.editorial-text-inner p:has(+ .editorial-accordion--inline) {
+  display: inline;
+  margin-top: 0;
+  text-align: left;
+  word-spacing: normal;
+}
+
+.editorial-accordion--inline {
+  display: inline;
+  width: auto;
+  margin: 0;
+}
+
+.editorial-accordion__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  list-style: none;
+  color: currentcolor;
+  text-decoration: underline;
+  text-decoration-color: currentcolor;
+  text-decoration-thickness: 0.075em;
+  text-underline-offset: 0.125em;
+  font-size: var(--font-paragraph--size);
+  font-weight: var(--font-paragraph--weight);
+  line-height: var(--font-paragraph--line-height);
+  transition: color var(--animation-speed) var(--animation-easing);
+}
+
+.editorial-accordion--inline .editorial-accordion__trigger {
+  display: inline;
+  margin-left: 0.25em;
+  vertical-align: baseline;
+}
+
+.editorial-accordion__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.editorial-accordion__trigger::after {
+  content: none;
+}
+
+.editorial-accordion__trigger:hover {
+  color: rgb(var(--color-foreground-rgb) / 0.7);
+}
+
+/* État fermé par défaut */
+.editorial-accordion__label--open {
+  display: none;
+}
+
+/* État ouvert */
+.editorial-accordion[open] .editorial-accordion__label--closed {
+  display: none;
+}
+
+.editorial-accordion[open] .editorial-accordion__label--open {
+  display: inline;
+}
+
+.editorial-accordion--inline[open] .editorial-accordion__content {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/* --- Produit --- */
+/* Masquer la disponibilité de retrait en magasin (Horizon) */
+pickup-availability,
+.pickup-availability-preview,
+.pickup-availability-info,
+product-form-component pickup-availability {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* --- Alignement inline pour les listes de métaobjets --- */
+p:has(+ ul.metafield-single_line_text_field-array),
+p:has(+ p + ul.metafield-single_line_text_field-array) {
+  display: inline !important;
+  margin-right: 0.25em !important;
+}
+
+/* Masque un éventuel <p> </p> coincé juste avant la liste */
+p:has(+ ul.metafield-single_line_text_field-array) + p:empty,
+p:has(+ ul.metafield-single_line_text_field-array) + p:has(br:only-child) {
+  display: none !important;
+}
+
+ul.metafield-single_line_text_field-array {
+  display: inline !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+ul.metafield-single_line_text_field-array li.metafield-single_line_text_field {
+  display: inline !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ajoute une virgule entre plusieurs éléments */
+ul.metafield-single_line_text_field-array li.metafield-single_line_text_field:not(:last-child)::after {
+  content: ", ";
+}
+
+/* --- Reste du site --- */
