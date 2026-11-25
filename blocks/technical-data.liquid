@@ -1,0 +1,177 @@
+{% doc %}
+  Renders the product's technical data (vintage, grape varieties, colour, etc.)
+  as one line per field. Multi-value metafields are joined with commas on the
+  same line as their label instead of being rendered as a list.
+
+  Metafields are read from the `technique` namespace, except agriculture,
+  parcelles and ingredients which live in `custom`.
+
+  @example
+  {% content_for 'block', type: 'technical-data', id: 'technical-data' %}
+{% enddoc %}
+
+{%- liquid
+  assign product = closest.product
+  if request.visual_preview_mode and product == blank
+    assign product = collections.all.products.first
+  endif
+
+  assign technique = product.metafields.technique
+  assign custom = product.metafields.custom
+
+  # Single values (text, number or metaobject reference).
+  assign vintage = technique.millesime.value | default: custom.millesime.value
+  assign color = technique.couleur.value | default: custom.couleur.value
+  assign alcohol = technique.taux_alcool.value | default: custom.taux_alcool.value
+  assign farming = technique.agriculture.value | default: custom.agriculture.value
+  assign aging = technique.elevage.value
+  assign planting_density = technique.densite.value
+
+  # Planting density is a metaobject whose only field is `nombre` (integer).
+  # A plain value (no metaobject) is used as is.
+  if planting_density.system == blank
+    assign planting_density_label = planting_density
+  else
+    assign planting_density_label = planting_density.nombre.value | default: planting_density.nom.value
+  endif
+
+  # Numeric density: "7500" -> "7 500 pieds/ha" (non-breaking space as thousands separator).
+  assign planting_density_unit = ''
+  assign density_number = planting_density_label | plus: 0
+  if density_number > 0
+    assign planting_density_unit = '&nbsp;pieds/ha'
+    if density_number >= 1000
+      assign density_thousands = density_number | divided_by: 1000
+      assign density_remainder = density_number | modulo: 1000 | plus: 1000 | append: '' | slice: 1, 3
+      assign planting_density_label = density_thousands | append: '&nbsp;' | append: density_remainder
+    endif
+  endif
+  assign pruning = technique.taille.value
+
+  # Lists of metaobject references.
+  assign grape_varieties = technique.cepages.value | default: custom.cepages.value
+  assign plots = technique.parcelles.value | default: custom.parcelles.value
+  assign ingredients = technique.ingredients.value | default: custom.ingredients.value
+  assign inputs = technique.intrants.value | default: custom.intrants.value
+
+  # Harvest location may be a single reference or a list.
+  assign harvest_location_field = technique.lieu
+  if harvest_location_field.value == blank
+    assign harvest_location_field = custom.lieu
+  endif
+  assign harvest_location = harvest_location_field.value
+
+  # Multi-line text / rich text.
+  assign winemaking_field = technique.vinification
+-%}
+
+<div class="technical-data" {{ block.shopify_attributes }}>
+  {%- if vintage != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.vintage' | t }} : {{ vintage -}}
+    </p>
+  {%- endif -%}
+
+  {%- if grape_varieties != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.grape_varieties' | t }} :
+      {% for item in grape_varieties %}{{ item.nom.value }}{% unless forloop.last %}, {% endunless %}{% endfor -%}
+    </p>
+  {%- endif -%}
+
+  {%- if color != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.color' | t }} : {{ color.nom.value | default: color -}}
+    </p>
+  {%- endif -%}
+
+  {%- if alcohol != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.alcohol' | t }} : {{ alcohol }}&nbsp;% alc/vol
+    </p>
+  {%- endif -%}
+
+  {%- if farming != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.farming' | t }} : {{ farming.nom.value | default: farming -}}
+    </p>
+  {%- endif -%}
+
+  {%- if harvest_location != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.harvest_location' | t }} :
+      {% if harvest_location_field.type contains 'list.' -%}
+        {% for item in harvest_location %}{{ item.nom.value }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+      {%- else -%}
+        {{ harvest_location.nom.value | default: harvest_location }}
+      {%- endif %}
+    </p>
+  {%- endif -%}
+
+  {%- if plots != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.plots' | t }} :
+      {% for item in plots %}{{ item.nom.value }}{% unless forloop.last %}, {% endunless %}{% endfor -%}
+    </p>
+  {%- endif -%}
+
+  {%- if planting_density != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.planting_density' | t }} : {{ planting_density_label }}{{ planting_density_unit -}}
+    </p>
+  {%- endif -%}
+
+  {%- if pruning != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.pruning' | t }} : {{ pruning.nom.value | default: pruning -}}
+    </p>
+  {%- endif -%}
+
+  {%- if winemaking_field.value != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.winemaking' | t }} : {{ winemaking_field | metafield_tag -}}
+    </p>
+  {%- endif -%}
+
+  {%- if aging != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.aging' | t }} : {{ aging.nom.value | default: aging -}}
+    </p>
+  {%- endif -%}
+
+  {%- if ingredients != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.ingredients' | t }} :
+      {% for item in ingredients %}{{ item.nom.value }}{% unless forloop.last %}, {% endunless %}{% endfor -%}
+    </p>
+  {%- endif -%}
+
+  {%- if inputs != blank -%}
+    <p class="technical-data__line">
+      {{- 'blocks.technical_data.oenological_inputs' | t }} :
+      {% for item in inputs %}{{ item.nom.value }}{% unless forloop.last %}, {% endunless %}{% endfor -%}
+    </p>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .technical-data__line {
+    margin-block: 0 0.75em;
+  }
+
+  .technical-data__line:last-child {
+    margin-block-end: 0;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.technical_data",
+  "tag": null,
+  "presets": [
+    {
+      "name": "t:names.technical_data"
+    }
+  ]
+}
+{% endschema %}
