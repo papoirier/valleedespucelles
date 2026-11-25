@@ -16,6 +16,21 @@
       "placeholder": "Adresse e-mail",
       "success": "Merci de vous être abonné(e) !"
     },
+    "technical_data": {
+      "vintage": "Millésime",
+      "grape_varieties": "Cépage(s)",
+      "color": "Couleur",
+      "alcohol": "Taux d'alcool",
+      "farming": "Agriculture",
+      "harvest_location": "Lieu de récolte",
+      "plots": "Parcelle(s)",
+      "ingredients": "Ingrédients",
+      "oenological_inputs": "Intrants œnologiques",
+      "planting_density": "Densité de plantation",
+      "pruning": "Taille",
+      "winemaking": "Vinification",
+      "aging": "Élevage"
+    },
     "filter": "Filtrer",
     "payment_methods": "Moyens de paiement",
     "contact_form": {

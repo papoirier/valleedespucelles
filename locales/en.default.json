@@ -142,6 +142,21 @@
       "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
       "error_heading": "Please adjust the following:"
     },
+    "technical_data": {
+      "vintage": "Vintage",
+      "grape_varieties": "Grape varieties",
+      "color": "Color",
+      "alcohol": "Alcohol",
+      "farming": "Farming",
+      "harvest_location": "Harvest location",
+      "plots": "Plots",
+      "ingredients": "Ingredients",
+      "oenological_inputs": "Oenological inputs",
+      "planting_density": "Planting density",
+      "pruning": "Pruning",
+      "winemaking": "Winemaking",
+      "aging": "Aging"
+    },
     "email_signup": {
       "label": "Email",
       "placeholder": "Email address",

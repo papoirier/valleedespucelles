@@ -267,7 +267,7 @@
       {{ 'content.checkout' | t }}
     </span>
   </button>
-
+  {% comment %}
   {% if additional_checkout_buttons and settings.show_accelerated_checkout_buttons %}
     <div
       class="
@@ -278,6 +278,7 @@
       {{ content_for_additional_checkout_buttons }}
     </div>
   {% endif %}
+  {% endcomment %}
 </div>
 
 {% stylesheet %}

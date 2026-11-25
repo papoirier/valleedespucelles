@@ -329,4 +329,10 @@ ul.metafield-single_line_text_field-array li.metafield-single_line_text_field:no
   content: ", ";
 }
 
+summary .details__header,
+.accordion .details__header {
+    font-weight: var(--font-h5--weight);
+    font-size: var(--font-h5--size);
+}
+
 /* --- Reste du site --- */
