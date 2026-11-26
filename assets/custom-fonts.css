@@ -110,10 +110,6 @@ localization-form * {
   color: #dc1918;
 }
 
-html:not(.hide-home-header) .home-editorial {
-  min-height: 80vh;
-}
-
 
 /* --- Modale Infolettre (<dialog>) --- */
 .editorial-modal {
