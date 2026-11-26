@@ -533,8 +533,10 @@
     display: none;
   }
 
-  /* Header localization (button + language list) shown in lowercase. */
-  #header-component :is(.dropdown-localization, .menu-drawer__localization) {
+  /* Header localization (button + language list) shown in lowercase.
+     Descendants are targeted too: .button and heading classes set their own text-transform. */
+  #header-component :is(.dropdown-localization, .menu-drawer__localization),
+  #header-component :is(.dropdown-localization, .menu-drawer__localization) * {
     text-transform: lowercase;
   }
 
