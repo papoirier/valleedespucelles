@@ -1,3 +1,4 @@
+{% if request.design_mode %}<p {{ block.shopify_attributes }} style="background:yellow;padding:.5rem">TEST produit : {{ closest.product.title }} | cuvées trouvées : {{ closest.product.metafields.custom.cuvees.value.size }}</p>{% endif %}
 {%- doc -%}
   Affiche les données techniques de chaque cuvée contenue dans une caisse mixte,
   une rangée d'accordéon par cuvée.
@@ -92,6 +93,10 @@
   </div>
 
   {% render 'accordion-styles' %}
+{% elsif request.design_mode %}
+  <p {{ block.shopify_attributes }} style="padding: 0.75rem; border: 1px dashed currentColor; opacity: 0.7;">
+    Cuvées de la caisse : aucune cuvée trouvée dans le métachamp custom.cuvees de « {{ closest.product.title | default: 'produit introuvable' }} ».
+  </p>
 {% endif %}
 
 {% stylesheet %}
