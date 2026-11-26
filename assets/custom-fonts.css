@@ -30,6 +30,9 @@ body,
   --font-menu--family: 'FF Mark', sans-serif !important;
   --font-h5--weight: 700 !important;
 }
+.accordion .details__header {
+  font-weight: 400 !important;
+}
 
 /* ==========================================================================
    Application globale et formulaires
