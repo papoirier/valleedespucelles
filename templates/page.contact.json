@@ -82,7 +82,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Tenez-vous au courant de nos lancements et événements. Nous enverrons au maximum 4 courriels par année.</p>",
+            "text": "{{ closest.page.metafields.custom.newsletter_description | metafield_tag }}",
             "width": "100%",
             "max_width": "none",
             "alignment": "left",
