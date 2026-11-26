@@ -69,17 +69,22 @@
             {% if c.agriculture != blank %}
               <p><span class="cuvees-caisse__label">Agriculture :</span> {{ c.agriculture | metafield_text: field: 'nom' }}</p>
             {% endif %}
-            {% if t.lieu != blank %}
-              <p><span class="cuvees-caisse__label">Lieu de récolte :</span> {{ t.lieu | metafield_text: field: 'nom' }}</p>
-            {% endif %}
-            {% if c.parcelles != blank %}
-              <p><span class="cuvees-caisse__label">Parcelle(s) :</span> {{ c.parcelles | metafield_text: field: 'nom' }}</p>
-            {% endif %}
             {% if c.ingredients != blank %}
               <p><span class="cuvees-caisse__label">Ingrédients :</span> {{ c.ingredients | metafield_text: field: 'nom' }}</p>
             {% endif %}
             {% if t.intrants != blank %}
               <p><span class="cuvees-caisse__label">Intrants œnologiques :</span> {{ t.intrants | metafield_text: field: 'nom' }}</p>
+            {% endif %}
+
+            {% if c.degustation != blank %}
+              <div class="cuvees-caisse__degustation">
+                <p class="cuvees-caisse__label">Notes de dégustation :</p>
+                {% if c.degustation.type == 'rich_text_field' %}
+                  <div class="rte">{{ c.degustation | metafield_tag }}</div>
+                {% else %}
+                  <p>{{ c.degustation.value | escape | newline_to_br }}</p>
+                {% endif %}
+              </div>
             {% endif %}
 
             {% if block.settings.show_link %}
@@ -123,6 +128,14 @@
   }
 
   .cuvees-caisse__fiche p:last-child {
+    margin-block-end: 0;
+  }
+
+  .cuvees-caisse__degustation {
+    margin-block-start: 0.9em;
+  }
+
+  .cuvees-caisse__degustation .rte > :last-child {
     margin-block-end: 0;
   }
 
