@@ -61,7 +61,7 @@
             "input_background_color": "",
             "input_text_color": "",
             "input_border_color": "",
-            "input_type_preset": "",
+            "input_type_preset": "paragraph",
             "style_class": "button-secondary",
             "custom_button_background": "{{ settings.color_palette.foreground }}",
             "custom_button_text": "{{ settings.color_palette.background }}",
@@ -77,12 +77,39 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "text_ib9f4C": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Tenez-vous au courant de nos lancements et événements. Nous enverrons au maximum 4 courriels par année.</p>",
+            "width": "100%",
+            "max_width": "none",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "heading",
         "page-content",
-        "email_signup_b83zHM"
+        "email_signup_b83zHM",
+        "text_ib9f4C"
       ],
       "settings": {
         "content_direction": "column",
