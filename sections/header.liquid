@@ -300,7 +300,7 @@
 
         {%- if show_language -%}
           <span>
-            {{ localization.language.iso_code | upcase }}
+            {{ localization.language.iso_code | downcase }}
           </span>
         {%- endif -%}
         <span class="svg-wrapper icon-caret">
@@ -531,6 +531,11 @@
 
   #header-component :is(.header-menu, .dropdown-localization) {
     display: none;
+  }
+
+  /* Header localization (button + language list) shown in lowercase. */
+  #header-component :is(.dropdown-localization, .menu-drawer__localization) {
+    text-transform: lowercase;
   }
 
   @media screen and (min-width: 750px) {
@@ -1700,6 +1705,10 @@
         {
           "value": "uppercase",
           "label": "t:options.uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "t:options.lowercase"
         }
       ],
       "default": "none",

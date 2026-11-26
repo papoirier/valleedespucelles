@@ -667,7 +667,7 @@
                     {%- if show_language -%}
                       <div class="mobile-localization mobile-localization--country">
                         <span>
-                          {{ localization.language.iso_code | upcase }}
+                          {{ localization.language.iso_code | downcase }}
                         </span>
                       </div>
                     {%- endif -%}
