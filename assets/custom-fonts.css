@@ -28,6 +28,7 @@ body,
   --font-subheading--family: 'FF Mark', sans-serif !important;
   --font-accent--family: 'FF Mark', sans-serif !important;
   --font-menu--family: 'FF Mark', sans-serif !important;
+  --font-h5--weight: 700 !important;
 }
 
 /* ==========================================================================
@@ -52,9 +53,7 @@ a,
   font-family: 'FF Mark', sans-serif !important;
 }
 
-h5 {
-    font-weight: 700;
-}
+
 /* ==========================================================================
    Rendu natif macOS pour le sélecteur de langue
    ========================================================================== */
