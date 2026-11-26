@@ -499,76 +499,10 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
-                },
-                "accordion_3qmkJJ": {
-                  "type": "accordion",
-                  "name": "t:names.accordion",
-                  "settings": {
-                    "icon": "caret",
-                    "dividers": true,
-                    "divider_color": "",
-                    "type_preset": "h6",
-                    "background_color": "",
-                    "text_color": "",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_color": "",
-                    "border_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {
-                    "accordion_row_7w6D4i": {
-                      "type": "_accordion-row",
-                      "settings": {
-                        "heading": "Données techniques",
-                        "open_by_default": false,
-                        "icon": "none",
-                        "width": 20
-                      },
-                      "blocks": {
-                        "text_gAaHVU": {
-                          "type": "text",
-                          "settings": {
-                            "text": "<p>Millésime : {{ closest.product.metafields.technique.millesime.value }}</p><p>Cépage(s) :&nbsp;</p>{{ closest.product.metafields.technique.cepages | metafield_tag: field: 'nom' }}<p>Couleur : {{ closest.product.metafields.technique.couleur.value.nom.value }}</p><p>Taux d'alcool : {{ closest.product.metafields.technique.taux_alcool.value }}% alc/vol</p><p>Agriculture : {{ closest.product.metafields.custom.agriculture.value.nom.value }}</p><p>Lieu de récolte :&nbsp;</p>{{ closest.product.metafields.technique.lieu | metafield_tag: field: 'nom' }}<p>Parcelle(s) :&nbsp;</p>{{ closest.product.metafields.custom.parcelles | metafield_tag: field: 'nom' }}<p>Ingrédients :&nbsp;</p>{{ closest.product.metafields.custom.ingredients | metafield_tag: field: 'nom' }}<p>Intrants œnologiques :&nbsp;</p>{{ closest.product.metafields.technique.intrants | metafield_tag: field: 'nom' }}",
-                            "width": "100%",
-                            "max_width": "normal",
-                            "alignment": "left",
-                            "type_preset": "rte",
-                            "font": "var(--font-body--family)",
-                            "font_size": "1rem",
-                            "line_height": "normal",
-                            "letter_spacing": "normal",
-                            "case": "none",
-                            "wrap": "pretty",
-                            "text_color": "",
-                            "background": false,
-                            "background_color": "#00000026",
-                            "corner_radius": 0,
-                            "padding-block-start": 0,
-                            "padding-block-end": 0,
-                            "padding-inline-start": 0,
-                            "padding-inline-end": 0
-                          },
-                          "blocks": {}
-                        }
-                      },
-                      "block_order": [
-                        "text_gAaHVU"
-                      ]
-                    }
-                  },
-                  "block_order": [
-                    "accordion_row_7w6D4i"
-                  ]
                 }
               },
               "block_order": [
-                "text_fhD6kd",
-                "accordion_3qmkJJ"
+                "text_fhD6kd"
               ]
             },
             "group_PDyKUL": {
