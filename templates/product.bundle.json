@@ -295,6 +295,17 @@
                 "link_label": "Voir la fiche complète"
               },
               "blocks": {}
+            },
+            "cuvees_caisse_qpdBUE": {
+              "type": "cuvees-caisse",
+              "name": "Cuvées de la caisse",
+              "settings": {
+                "type_preset": "h6",
+                "open_first": false,
+                "show_link": true,
+                "link_label": "Voir la fiche complète"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -303,7 +314,8 @@
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "text_aEtTtq",
-            "cuvees_caisse_zR7eFV"
+            "cuvees_caisse_zR7eFV",
+            "cuvees_caisse_qpdBUE"
           ]
         }
       },
