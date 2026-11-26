@@ -12,154 +12,6 @@
     "main": {
       "type": "product-information",
       "blocks": {
-        "accordion_AFj33g": {
-          "type": "accordion",
-          "name": "t:names.accordion",
-          "disabled": true,
-          "settings": {
-            "icon": "caret",
-            "dividers": true,
-            "divider_color": "",
-            "type_preset": "h6",
-            "background_color": "",
-            "text_color": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "accordion_row_tUBKLe": {
-              "type": "_accordion-row",
-              "settings": {
-                "heading": "Millésime : {{ closest.product.metafields.technique.millesime.value }}",
-                "open_by_default": true,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "text_fkkTQV": {
-                  "type": "text",
-                  "disabled": true,
-                  "settings": {
-                    "text": "<p>Notre objectif est que chaque client soit entièrement satisfait de son achat. Si ce n’est pas le cas, faites-le-nous savoir et nous ferons de notre mieux pour trouver une solution avec vous.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_fkkTQV"
-              ]
-            },
-            "accordion_row_Ek7dyc": {
-              "type": "_accordion-row",
-              "settings": {
-                "heading": "Cépage(s) : {{ closest.product.metafields.technique.cepages | metafield_text: field: 'nom' }}",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "text_Ee98Kn": {
-                  "type": "text",
-                  "disabled": true,
-                  "settings": {
-                    "text": "<p>Nous nous efforcerons d’expédier votre commande le plus rapidement possible. Une fois votre commande expédiée, vous recevrez un e-mail contenant des informations supplémentaires. Les délais de livraison varient en fonction de votre emplacement.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_Ee98Kn"
-              ]
-            },
-            "accordion_row_tNK9Pp": {
-              "type": "_accordion-row",
-              "settings": {
-                "heading": "Fabrication",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "text_9zQtDX": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Nos produits sont fabriqués localement et dans le monde entier. Nous sélectionnons soigneusement nos partenaires de fabrication pour garantir que nos produits sont de haute qualité et d’un juste rapport qualité-prix.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_9zQtDX"
-              ]
-            }
-          },
-          "block_order": [
-            "accordion_row_tUBKLe",
-            "accordion_row_Ek7dyc",
-            "accordion_row_tNK9Pp"
-          ]
-        },
         "media-gallery": {
           "type": "_product-media-gallery",
           "static": true,
@@ -433,110 +285,16 @@
               },
               "blocks": {}
             },
-            "accordion_LiaEtw": {
-              "type": "accordion",
-              "name": "t:names.accordion",
+            "cuvees_caisse_zR7eFV": {
+              "type": "cuvees-caisse",
+              "name": "Cuvées de la caisse",
               "settings": {
-                "icon": "caret",
-                "dividers": true,
-                "divider_color": "",
                 "type_preset": "h6",
-                "background_color": "",
-                "text_color": "",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_color": "",
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "open_first": false,
+                "show_link": true,
+                "link_label": "Voir la fiche complète"
               },
-              "blocks": {
-                "accordion_row_NqPAKm": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Politique de retour",
-                    "open_by_default": true,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_tKjQFJ": {
-                      "type": "text",
-                      "settings": {
-                        "text": "",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "text_color": "",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_tKjQFJ"
-                  ]
-                },
-                "accordion_row_g3mFQJ": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Fabrication",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_6KfTtg": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Nos produits sont fabriqués localement et dans le monde entier. Nous sélectionnons soigneusement nos partenaires de fabrication pour garantir que nos produits sont de haute qualité et d’un juste rapport qualité-prix.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "text_color": "",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_6KfTtg"
-                  ]
-                }
-              },
-              "block_order": [
-                "accordion_row_NqPAKm",
-                "accordion_row_g3mFQJ"
-              ]
+              "blocks": {}
             }
           },
           "block_order": [
@@ -545,13 +303,10 @@
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "text_aEtTtq",
-            "accordion_LiaEtw"
+            "cuvees_caisse_zR7eFV"
           ]
         }
       },
-      "block_order": [
-        "accordion_AFj33g"
-      ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
