@@ -4,6 +4,14 @@
   <section class="home-editorial page-width">
     <h1 class="home-editorial__content">
       {{ home_entry.body_text | metafield_tag | remove: '<div class="metafield-rich_text_field">' | remove: '</div>' | remove: '<p>' | remove: '</p>' }}
+      <span class="home-closing">
+        {%- if cart.item_count > 0 -%}
+          {{ 'home.contact_short_html' | t }}
+          {{ 'home.cart_html' | t: count: cart.item_count, url: routes.cart_url }}
+        {%- else -%}
+          {{ 'home.contact_html' | t }}
+        {%- endif -%}
+      </span>
       {%- if localization.available_languages.size > 1 -%}
         {%- for language in localization.available_languages -%}
           {%- unless language.iso_code == localization.language.iso_code -%}

@@ -188,6 +188,14 @@
       "success": "Comment posted"
     }
   },
+  "home": {
+    "contact_html": "enfin, voici comment <a href=\"{{ url }}\">nous joindre</a>.",
+    "contact_short_html": "comment <a href=\"{{ url }}\">nous joindre</a>.",
+    "cart_html": {
+      "one": "enfin, vous avez 1 item dans votre <a href=\"{{ url }}\">panier</a>.",
+      "other": "enfin, vous avez {{ count }} items dans votre <a href=\"{{ url }}\">panier</a>."
+    }
+  },
   "content": {
     "cancel": "Cancel",
     "discount": "Discount",
