@@ -90,7 +90,7 @@ localization-form * {
   text-align: left;
 }
 .home-editorial h1 {
-  font-size: clamp(2rem, 4vw, 4.5rem);
+  font-size: clamp(2rem, 3.5vw, 4rem);
 }
 .home-editorial__content,
 .home-editorial h1 {
