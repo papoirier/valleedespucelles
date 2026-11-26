@@ -253,6 +253,35 @@
 </div>
 
 <div class="cart__ctas">
+  {% if settings.require_age_confirmation and cart != empty %}
+    {% render 'checkbox-styles' %}
+    {% # Native required validation blocks the checkout submit. The value is saved as a cart attribute on checkout. %}
+    {% # data-skip-node-update keeps the checked state when the cart re-renders after a quantity change. %}
+    <div
+      class="checkbox cart__age-confirmation"
+      data-skip-node-update
+    >
+      <input
+        type="checkbox"
+        id="age-confirmation-{{ section_id | default: 'cart' }}"
+        class="checkbox__input"
+        name="attributes[Âge confirmé 18+]"
+        value="Oui"
+        form="cart-form"
+        required
+        aria-required="true"
+        data-skip-node-update
+      >
+      <label
+        class="checkbox__label"
+        for="age-confirmation-{{ section_id | default: 'cart' }}"
+      >
+        {{ 'icon-checkmark.svg' | inline_asset_content }}
+        <span class="checkbox__label-text">{{ 'content.age_confirmation' | t }}</span>
+      </label>
+    </div>
+  {% endif %}
+
   <button
     type="submit"
     id="checkout"
@@ -267,8 +296,11 @@
       {{ 'content.checkout' | t }}
     </span>
   </button>
-  {% comment %}
-  {% if additional_checkout_buttons and settings.show_accelerated_checkout_buttons %}
+
+  {% if additional_checkout_buttons
+    and settings.show_accelerated_checkout_buttons
+    and settings.require_age_confirmation == false
+  %}
     <div
       class="
         additional-checkout-buttons
@@ -278,7 +310,6 @@
       {{ content_for_additional_checkout_buttons }}
     </div>
   {% endif %}
-  {% endcomment %}
 </div>
 
 {% stylesheet %}
@@ -471,6 +502,14 @@
     gap: var(--checkout-button-gap);
     grid-auto-flow: row;
     grid-template-columns: 1fr;
+  }
+
+  .cart__age-confirmation {
+    font-size: var(--cart-font-size--sm);
+  }
+
+  .cart__age-confirmation .checkbox__label {
+    align-items: flex-start;
   }
 
   .cart__ctas .cart__checkout-button {

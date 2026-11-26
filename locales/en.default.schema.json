@@ -229,6 +229,7 @@
     "carousel_hover_behavior_not_supported": "\"Carousel\" hover is not supported when \"Carousel\" type is selected at the section level",
     "carousel_layout_on_mobile": "Carousel is always used on mobile",
     "checkout_buttons": "Allows buyers to check out faster and can improve conversion. [Learn more](https://help.shopify.com/manual/online-store/dynamic-checkout)",
+    "require_age_confirmation": "Adds a required checkbox above the checkout button. Also hides accelerated checkout buttons on product pages and in the cart, since they skip this checkbox.",
     "custom_heading": "Custom heading",
     "custom_liquid": "Add app snippets or other code to create advanced customizations. [Learn more](https://shopify.dev/docs/api/liquid)",
     "edit_button_style_in_theme_settings": "Edit primary and secondary button styles in [theme settings](/editor?context=theme&category=buttons)",
@@ -814,6 +815,7 @@
     // Text case setting for typography (uppercase/lowercase)
     "case": "Case",
     "checkout_buttons": "Accelerated checkout buttons",
+    "require_age_confirmation": "Require age confirmation (18+)",
     "collection": "Collection",
     "collection_count": "Collection count",
     "collection_list": "Collections",
