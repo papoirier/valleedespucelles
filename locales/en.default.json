@@ -189,11 +189,11 @@
     }
   },
   "home": {
-    "contact_html": "enfin, voici comment <a href=\"{{ url }}\">nous joindre</a>.",
-    "contact_short_html": "comment <a href=\"{{ url }}\">nous joindre</a>.",
+    "contact_html": "finally, here's how to <a href=\"{{ url }}\">reach us</a>.",
+    "contact_short_html": "how to <a href=\"{{ url }}\">reach us</a>.",
     "cart_html": {
-      "one": "enfin, vous avez 1 item dans votre <a href=\"{{ url }}\">panier</a>.",
-      "other": "enfin, vous avez {{ count }} items dans votre <a href=\"{{ url }}\">panier</a>."
+      "one": "finally, you have 1 item in your <a href=\"{{ url }}\">cart</a>.",
+      "other": "finally, you have {{ count }} items in your <a href=\"{{ url }}\">cart</a>."
     }
   },
   "content": {

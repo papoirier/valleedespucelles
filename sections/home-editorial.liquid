@@ -4,12 +4,13 @@
   <section class="home-editorial page-width">
     <h1 class="home-editorial__content">
       {{ home_entry.body_text | metafield_tag | remove: '<div class="metafield-rich_text_field">' | remove: '</div>' | remove: '<p>' | remove: '</p>' }}
+      {%- assign contact_url = routes.root_url | append: '/pages/contact' | replace: '//', '/' -%}
       <span class="home-closing">
         {%- if cart.item_count > 0 -%}
-          {{ 'home.contact_short_html' | t }}
+          {{ 'home.contact_short_html' | t: url: contact_url }}
           {{ 'home.cart_html' | t: count: cart.item_count, url: routes.cart_url }}
         {%- else -%}
-          {{ 'home.contact_html' | t }}
+          {{ 'home.contact_html' | t: url: contact_url }}
         {%- endif -%}
       </span>
       {%- if localization.available_languages.size > 1 -%}
