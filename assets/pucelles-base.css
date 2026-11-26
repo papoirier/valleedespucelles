@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Vallée des pucelles : base
+   Fonte, variables globales, typographie et éléments communs.
+   Chargé en premier : les deux autres fichiers pucelles-* utilisent ses variables.
+   ========================================================================== */
+
+
+/* --- Fonte FF Mark --- */
+
+@font-face {
+  font-family: 'FF Mark';
+  src: url('https://cdn.shopify.com/s/files/1/1613/9725/files/MarkWeb.woff2?v=1794880575') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/1613/9725/files/MarkWeb.woff?v=1794880123') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FF Mark';
+  src: url('https://cdn.shopify.com/s/files/1/1613/9725/files/MarkWeb-Bold.woff2?v=1794880575') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/1613/9725/files/MarkWeb-Bold.woff?v=1794880123') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* --- Variables --- */
+
+:root,
+body,
+[data-scheme] {
+  /* Couleurs du domaine */
+  --pucelles-rouge: #b71918;
+  --pucelles-rouge-survol: #dc1918;
+  --pucelles-encre: #121212;
+  --pucelles-fonte: 'FF Mark', sans-serif;
+
+  /* Horizon : toutes les familles pointent vers FF Mark */
+  --font-body--family: var(--pucelles-fonte) !important;
+  --font-heading--family: var(--pucelles-fonte) !important;
+  --font-subheading--family: var(--pucelles-fonte) !important;
+  --font-accent--family: var(--pucelles-fonte) !important;
+  --font-menu--family: var(--pucelles-fonte) !important;
+
+  /* Horizon : poids des titres */
+  --font-h5--weight: 700 !important;
+}
+
+
+/* --- Typographie --- */
+
+/* Les éléments de formulaire n'héritent pas de la fonte par défaut. */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--pucelles-fonte) !important;
+}
+
+/* Liens dans les textes enrichis : rouge du domaine, sans soulignement */
+.rte a {
+  color: var(--pucelles-rouge);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.rte a:hover {
+  color: var(--pucelles-rouge-survol);
+}
+
+
+/* --- Sélecteur de langue --- */
+
+/* Rendu natif macOS */
+select#dropdownSelect,
+select.localization-form__select {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+dropdown-localization-component,
+dropdown-localization-component *,
+localization-form,
+localization-form * {
+  font-family: var(--pucelles-fonte) !important;
+  --font-family: var(--pucelles-fonte) !important;
+}

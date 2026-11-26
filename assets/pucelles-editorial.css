@@ -1,0 +1,214 @@
+/* ==========================================================================
+   Vallée des pucelles : éditorial
+   Accueil, infolettre (modale et page Nous joindre), accordéon « Plus + ».
+   ========================================================================== */
+
+
+/* --- Accueil --- */
+
+.home-editorial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.home-editorial__content {
+  width: 100%;
+  max-width: 30ch;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.home-editorial__content,
+.home-editorial h1 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.home-editorial h1 a {
+  color: var(--pucelles-rouge);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.home-editorial h1 a:hover {
+  color: var(--pucelles-rouge-survol);
+}
+
+
+/* --- Infolettre : modale (<dialog>) --- */
+
+.editorial-modal {
+  border: 1px solid var(--pucelles-encre);
+  padding: 0;
+  max-width: 440px;
+  width: calc(100% - 3rem);
+  background: #ffffff;
+  color: var(--pucelles-encre);
+}
+
+.editorial-modal::backdrop {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px);
+}
+
+.editorial-modal__box {
+  position: relative;
+  padding: 2.5rem 2rem;
+}
+
+.editorial-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--pucelles-encre);
+}
+
+.editorial-modal__close:hover {
+  color: var(--pucelles-rouge-survol);
+}
+
+
+/* --- Infolettre : page Nous joindre --- */
+
+.editorial-page-newsletter {
+  padding-top: 0;
+  padding-bottom: 80px;
+}
+
+.editorial-page-newsletter__inner {
+  max-width: 440px;
+}
+
+
+/* --- Infolettre : éléments partagés (modale + page) --- */
+
+.editorial-modal__title,
+.editorial-page-newsletter__title {
+  margin: 0 0 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.editorial-newsletter__field {
+  display: flex;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--pucelles-encre);
+  padding-bottom: 0.4rem;
+}
+
+.editorial-newsletter__field input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.5rem;
+  color: var(--pucelles-encre);
+}
+
+.editorial-newsletter__field button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  cursor: pointer;
+  color: var(--pucelles-rouge);
+  transition: color 0.2s ease;
+}
+
+.editorial-newsletter__field button:hover {
+  color: var(--pucelles-rouge-survol);
+}
+
+.editorial-newsletter__status {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--pucelles-rouge);
+}
+
+
+/* --- Accordéon éditorial « Plus + / Moins - » --- */
+
+.editorial-accordion {
+  width: 100%;
+  max-width: var(--max-width--body-normal);
+}
+
+/* Version en ligne : le paragraphe précédent reste sur la même ligne que « Plus + » */
+.editorial-text-inner p:has(+ .editorial-accordion--inline) {
+  display: inline;
+  margin-top: 0;
+  text-align: left;
+  word-spacing: normal;
+}
+
+.editorial-accordion--inline {
+  display: inline;
+  width: auto;
+  margin: 0;
+}
+
+/* Déclencheur : même style qu'un lien de paragraphe */
+.editorial-accordion__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  list-style: none;
+  color: currentcolor;
+  text-decoration: underline;
+  text-decoration-color: currentcolor;
+  text-decoration-thickness: 0.075em;
+  text-underline-offset: 0.125em;
+  font-size: var(--font-paragraph--size);
+  font-weight: var(--font-paragraph--weight);
+  line-height: var(--font-paragraph--line-height);
+  transition: color var(--animation-speed) var(--animation-easing);
+}
+
+.editorial-accordion--inline .editorial-accordion__trigger {
+  display: inline;
+  margin-left: 0.25em;
+  vertical-align: baseline;
+}
+
+.editorial-accordion__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.editorial-accordion__trigger::after {
+  content: none;
+}
+
+.editorial-accordion__trigger:hover {
+  color: rgb(var(--color-foreground-rgb) / 0.7);
+}
+
+/* Libellés : « Plus + » fermé, « Moins - » ouvert */
+.editorial-accordion__label--open,
+.editorial-accordion[open] .editorial-accordion__label--closed {
+  display: none;
+}
+
+.editorial-accordion[open] .editorial-accordion__label--open {
+  display: inline;
+}
+
+.editorial-accordion--inline[open] .editorial-accordion__content {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}

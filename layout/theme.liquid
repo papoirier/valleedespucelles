@@ -29,7 +29,9 @@
     {% endif %}
 
     {{ content_for_header }}
-    {{ 'custom-fonts.css' | asset_url | stylesheet_tag }}
+    {{ 'pucelles-base.css' | asset_url | stylesheet_tag }}
+    {{ 'pucelles-editorial.css' | asset_url | stylesheet_tag }}
+    {{ 'pucelles-produit.css' | asset_url | stylesheet_tag }}
 
     {%- if template.name == 'index' -%}
       <style>

@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Vallée des pucelles : produit
+   Fiches produit, accordéons, listes de métaobjets.
+   ========================================================================== */
+
+
+/* --- Retrait en magasin (Horizon) : masqué --- */
+
+pickup-availability,
+.pickup-availability-preview,
+.pickup-availability-info {
+  display: none !important;
+}
+
+
+/* --- Accordéons (tout le site) --- */
+
+/* Titres : taille H5, poids normal, quel que soit le style choisi dans l'éditeur */
+.accordion .details__header {
+  font-size: var(--font-h5--size);
+  font-weight: 400 !important;
+}
+
+
+/* --- Listes de métaobjets sur une ligne ---
+   Pour les blocs texte qui affichent « Libellé : » suivi de
+   {{ … | metafield_tag: field: 'nom' }} (fiches bouteille).
+   Le libellé, la liste et ses éléments restent sur une ligne, séparés par des virgules. */
+
+p:has(+ ul.metafield-single_line_text_field-array),
+p:has(+ p + ul.metafield-single_line_text_field-array) {
+  display: inline !important;
+  margin-right: 0.25em !important;
+}
+
+/* Masque un <p> vide coincé entre le libellé et la liste */
+p:has(+ ul.metafield-single_line_text_field-array) + p:empty,
+p:has(+ ul.metafield-single_line_text_field-array) + p:has(br:only-child) {
+  display: none !important;
+}
+
+ul.metafield-single_line_text_field-array,
+ul.metafield-single_line_text_field-array li.metafield-single_line_text_field {
+  display: inline !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+ul.metafield-single_line_text_field-array li.metafield-single_line_text_field:not(:last-child)::after {
+  content: ", ";
+}
