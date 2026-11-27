@@ -273,7 +273,7 @@
     "store_owner_link_html": "Êtes-vous le propriétaire de la boutique ? <a href=\"{{ link }}\">Connectez-vous ici</a>",
     "shipping_discount_error": "Les réductions sur l’expédition sont affichées lors du paiement après avoir ajouté une adresse",
     "discount_code_error": "Le code de réduction ne peut pas être appliqué à votre panier",
-    "discount": "Réduction",
+    "discount": "Code de réduction",
     "recipient_form_send_to": "Envoyer à",
     "recipient_form_email_label": "E-mail du destinataire",
     "recipient_form_email_label_my_email": "Mon e-mail",
