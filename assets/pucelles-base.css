@@ -79,8 +79,8 @@ product-price .compare-at-price {
   font-size: var(--pucelles-taille-texte) !important;
 }
 
-/* Menu du header, écrit comme une phrase à côté du logo : « vins, à propos, contact »
-   Même taille et même graisse que le logo texte. Lien de la page en cours en rouge.
+/* Menu du header, écrit comme une phrase à côté du logo : « vins, à propos, contact. »
+   Taille du texte courant, graisse normale. « vins » (1er lien) toujours en rouge.
    (!important : Horizon impose la taille dans l'attribut style) */
 .header-menu .menu-list {
   --menu-horizontal-gap: 0;
@@ -92,8 +92,8 @@ product-price .compare-at-price {
 }
 
 .header-menu .menu-list__link {
-  font-size: var(--font-size--md) !important;
-  font-weight: 700 !important;
+  font-size: var(--pucelles-taille-texte) !important;
+  font-weight: 400 !important;
   text-transform: lowercase !important;
   color: var(--pucelles-encre) !important;
   transition: color 0.2s ease;
@@ -105,20 +105,7 @@ product-price .compare-at-price {
 
 .header-menu .menu-list__link:hover,
 .header-menu .menu-list__link--active,
-.header-menu .menu-list__link[aria-current='page'] {
-  color: var(--pucelles-rouge) !important;
-}
-
-/* Virgule noire entre les liens (hors du lien, donc jamais rouge) */
-.header-menu .menu-list__list-item:not([slot='overflow'], [slot='more']):has(~ .menu-list__list-item:not([slot='overflow'], [slot='more']))::after {
-  content: ',\00a0';
-  font-size: var(--pucelles-taille-texte);
-  font-weight: 400;
-  color: var(--pucelles-encre);
-  white-space: pre;
-}
-
-/* Premier lien du menu (« vins ») toujours en rouge */
+.header-menu .menu-list__link[aria-current='page'],
 .header-menu .menu-list__list-item:first-child .menu-list__link {
   color: var(--pucelles-rouge) !important;
 }
@@ -127,15 +114,17 @@ product-price .compare-at-price {
   color: var(--pucelles-rouge-survol) !important;
 }
 
-/* Liens dans les textes enrichis : rouge du domaine, sans soulignement */
-.rte a {
-  color: var(--pucelles-rouge);
-  text-decoration: none;
-  transition: color 0.2s ease;
+/* Ponctuation noire, hors des liens : virgule entre les liens, point après le dernier */
+.header-menu .menu-list__list-item:not([slot='overflow'], [slot='more'])::after {
+  content: '.';
+  font-size: var(--pucelles-taille-texte);
+  font-weight: 400;
+  color: var(--pucelles-encre);
+  white-space: pre;
 }
 
-.rte a:hover {
-  color: var(--pucelles-rouge-survol);
+.header-menu .menu-list__list-item:not([slot='overflow'], [slot='more']):has(~ .menu-list__list-item:not([slot='overflow'], [slot='more']))::after {
+  content: ',\00a0';
 }
 
 
