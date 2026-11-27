@@ -167,3 +167,39 @@ localization-form * {
   font-family: var(--pucelles-fonte) !important;
   --font-family: var(--pucelles-fonte) !important;
 }
+
+
+/* --- En-tête : lien de langue à la suite du menu (« … nous joindre. ›english ») --- */
+
+.header-menu__inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header-menu__langue {
+  margin: 0;
+  margin-inline-start: 0.3em;
+  font-size: var(--font-size--md);
+  font-weight: 700;
+  text-transform: lowercase;
+  white-space: nowrap;
+  color: var(--pucelles-encre);
+}
+
+.header-menu__langue a {
+  color: var(--pucelles-rouge);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header-menu__langue a:hover {
+  color: var(--pucelles-rouge-survol);
+}
+
+/* Le menu déroulant de langue devient inutile sur ordinateur (il reste dans le menu mobile) */
+@media screen and (min-width: 750px) {
+  #header-component .dropdown-localization {
+    display: none !important;
+  }
+}

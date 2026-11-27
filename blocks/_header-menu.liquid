@@ -213,6 +213,18 @@
             attributes: 'data-skip-node-update'
           %}
         </nav>
+        {%- comment -%} Vallée des pucelles : lien de langue à la suite de la phrase, comme sur l'accueil {%- endcomment -%}
+        {%- if localization.available_languages.size > 1 -%}
+          <p class="header-menu__langue">
+            {%- for language in localization.available_languages -%}
+              {%- unless language.iso_code == localization.language.iso_code -%}
+                ›&#8202;<a href="{{ language.root_url }}" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}">
+                  {%- if language.iso_code == 'en' -%}English{%- else -%}Français{%- endif -%}
+                </a>
+              {%- endunless -%}
+            {%- endfor -%}
+          </p>
+        {%- endif -%}
       </div>
 
       <script
