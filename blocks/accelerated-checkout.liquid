@@ -19,7 +19,8 @@
 %}
 
 {% capture accelerated_checkout_button %}
-  {% if product != blank and form_obj != blank %}
+  {% # Accelerated buttons skip the cart's age confirmation, so they stay hidden while it is required. %}
+  {% if product != blank and form_obj != blank and settings.require_age_confirmation == false %}
     {{ form_obj | payment_button }}
   {% endif %}
 {% endcapture %}

@@ -1560,6 +1560,14 @@
         "id": "show_accelerated_checkout_buttons",
         "label": "t:settings.checkout_buttons",
         "info": "t:info.checkout_buttons",
+        "default": true,
+        "visible_if": "{{ settings.require_age_confirmation == false }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "require_age_confirmation",
+        "label": "t:settings.require_age_confirmation",
+        "info": "t:info.require_age_confirmation",
         "default": true
       },
       {
