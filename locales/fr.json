@@ -410,8 +410,8 @@
     "contact_html": "enfin, voici comment <a href=\"{{ url }}\">nous joindre</a>.",
     "contact_short_html": "comment <a href=\"{{ url }}\">nous joindre</a>.",
     "cart_html": {
-      "one": "enfin, vous avez 1 item dans votre <a href=\"{{ url }}\">panier</a>.",
-      "other": "enfin, vous avez {{ count }} items dans votre <a href=\"{{ url }}\">panier</a>."
+      "one": "enfin, vous avez 1 article dans votre <a href=\"{{ url }}\">panier</a>.",
+      "other": "enfin, vous avez {{ count }} articles dans votre <a href=\"{{ url }}\">panier</a>."
     }
   }
 }
