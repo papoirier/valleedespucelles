@@ -407,6 +407,7 @@
     }
   },
   "home": {
+    "header_cart": "Panier"
     "contact_html": "Enfin, inscrivez-vous à notre <a href=\"#newsletter-modal\">infolettre</a> ou <a href=\"{{ url }}\">écrivez-nous</a>.",
     "contact_short_html": "Inscrivez-vous à notre <a href=\"#newsletter-modal\">infolettre</a> ou <a href=\"{{ url }}\">écrivez-nous</a>.",
     "cart_html": {

@@ -189,6 +189,7 @@
     }
   },
   "home": {
+    "header_cart": "Cart"
     "contact_html": "Finally, sign up for our <a href=\"#newsletter-modal\">newsletter</a> or <a href=\"{{ url }}\">write to us</a>.",
     "contact_short_html": "Sign up for our <a href=\"#newsletter-modal\">newsletter</a> or <a href=\"{{ url }}\">write to us</a>.",
     "cart_html": {
