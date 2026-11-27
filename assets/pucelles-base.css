@@ -77,7 +77,8 @@ textarea {
 /* Paragraphes : taille d'Horizon multipliée par l'échelle */
 p,
 .paragraph,
-.rte li {
+.rte li,
+h5 {
   font-size: calc(var(--font-paragraph--size) * var(--pucelles-echelle-texte));
 }
 
