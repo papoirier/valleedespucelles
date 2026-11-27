@@ -192,8 +192,8 @@
     "contact_html": "Finally, sign up for our <a href=\"#newsletter-modal\">newsletter</a> or <a href=\"{{ url }}\">write to us</a>.",
     "contact_short_html": "Sign up for our <a href=\"#newsletter-modal\">newsletter</a> or <a href=\"{{ url }}\">write to us</a>.",
     "cart_html": {
-      "one": "Finally, you have 1 item in your <a href=\"{{ url }}\">cart</a>.",
-      "other": "Finally, you have {{ count }} items in your <a href=\"{{ url }}\">cart</a>."
+      "one": "Finally, your <a href=\"{{ url }}\">cart</a> contains 1 item.",
+      "other": "Finally, your <a href=\"{{ url }}\">cart</a> contains {{ count }} items."
     }
   },
   "content": {

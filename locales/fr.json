@@ -410,8 +410,8 @@
     "contact_html": "Enfin, inscrivez-vous à notre <a href=\"#newsletter-modal\">infolettre</a> ou <a href=\"{{ url }}\">écrivez-nous</a>.",
     "contact_short_html": "Inscrivez-vous à notre <a href=\"#newsletter-modal\">infolettre</a> ou <a href=\"{{ url }}\">écrivez-nous</a>.",
     "cart_html": {
-      "one": "Enfin, vous avez 1 article dans votre <a href=\"{{ url }}\">panier</a>.",
-      "other": "Enfin, vous avez {{ count }} articles dans votre <a href=\"{{ url }}\">panier</a>."
+      "one": "Enfin, votre <a href=\"{{ url }}\">panier</a> contient 1 article.",
+      "other": "Enfin, votre <a href=\"{{ url }}\">panier</a> contient {{ count }} articles."
     }
   }
 }
