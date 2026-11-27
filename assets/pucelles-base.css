@@ -112,8 +112,8 @@ product-price .compare-at-price {
 /* Virgule noire entre les liens (hors du lien, donc jamais rouge) */
 .header-menu .menu-list__list-item:not([slot='overflow'], [slot='more']):has(~ .menu-list__list-item:not([slot='overflow'], [slot='more']))::after {
   content: ',\00a0';
-  font-size: var(--font-size--md);
-  font-weight: 700;
+  font-size: var(--pucelles-taille-texte);
+  font-weight: 400;
   color: var(--pucelles-encre);
   white-space: pre;
 }
