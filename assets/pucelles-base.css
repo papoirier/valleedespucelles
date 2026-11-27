@@ -188,13 +188,13 @@ localization-form * {
 }
 
 .header-menu__langue a {
-  color: var(--pucelles-rouge);
+  color: var(--pucelles-encre);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .header-menu__langue a:hover {
-  color: var(--pucelles-rouge-survol);
+  color: var(--pucelles-rouge);
 }
 
 /* Le menu déroulant de langue devient inutile sur ordinateur (il reste dans le menu mobile) */
