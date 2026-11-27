@@ -48,8 +48,9 @@ body,
   --pucelles-echelle-texte: 1.1;
   --pucelles-taille-texte: calc(var(--font-paragraph--size) * var(--pucelles-echelle-texte));
 
-  --font-h5--size: var(--pucelles-taille-texte) !important;
+  /* Horizon : titres H5 (gras, taille du texte courant) */
   --font-h5--weight: 700 !important;
+  --font-h5--size: var(--pucelles-taille-texte) !important;
 }
 
 
@@ -64,6 +65,25 @@ textarea {
   font-family: var(--pucelles-fonte) !important;
 }
 
+/* Texte courant */
+p,
+.paragraph,
+.rte li {
+  font-size: var(--pucelles-taille-texte);
+}
+
+/* Prix (fiches produit et cartes produit) : Horizon lui donne un style de titre */
+product-price,
+product-price .price,
+product-price .compare-at-price {
+  font-size: var(--pucelles-taille-texte) !important;
+}
+
+/* Menu de navigation du header (taille imposée par Horizon dans l'attribut style) */
+.menu-list__link {
+  font-size: var(--pucelles-taille-texte) !important;
+}
+
 /* Liens dans les textes enrichis : rouge du domaine, sans soulignement */
 .rte a {
   color: var(--pucelles-rouge);
@@ -75,26 +95,6 @@ textarea {
   color: var(--pucelles-rouge-survol);
 }
 
-/* Paragraphes : taille d'Horizon multipliée par l'échelle */
-/* Texte courant */
-p,
-.paragraph,
-.rte li {
-  font-size: var(--pucelles-taille-texte);
-}
-
-/* Prix (fiches produit et cartes produit) */
-product-price,
-product-price .price,
-product-price .compare-at-price {
-  font-size: var(--pucelles-taille-texte) !important;
-}
-
-/* Menu du header (ordinateur) */
-.menu-list__link {
-  font-size: var(--pucelles-taille-texte) !important;
-}
-
 
 /* --- Sélecteur de langue --- */
 
@@ -103,6 +103,18 @@ select#dropdownSelect,
 select.localization-form__select {
   -webkit-appearance: none !important;
   appearance: none !important;
+}
+
+/* Même taille que le texte courant */
+select.localization-form__select {
+  font-size: var(--pucelles-taille-texte) !important;
+}
+
+/* Mobile : 16 px minimum, sinon Safari iOS zoome quand on touche la liste */
+@media screen and (max-width: 749px) {
+  select.localization-form__select {
+    font-size: max(16px, var(--pucelles-taille-texte)) !important;
+  }
 }
 
 dropdown-localization-component,
