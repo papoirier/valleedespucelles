@@ -46,6 +46,9 @@ body,
 
   /* Horizon : poids des titres */
   --font-h5--weight: 700 !important;
+
+  /* Taille des paragraphes : 1.1 = +10 %, 0.9 = -10 % */
+  --pucelles-echelle-texte: 1.1;
 }
 
 
@@ -69,6 +72,13 @@ textarea {
 
 .rte a:hover {
   color: var(--pucelles-rouge-survol);
+}
+
+/* Paragraphes : taille d'Horizon multipliée par l'échelle */
+p,
+.paragraph,
+.rte li {
+  font-size: calc(var(--font-paragraph--size) * var(--pucelles-echelle-texte));
 }
 
 
