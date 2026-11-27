@@ -118,6 +118,15 @@ product-price .compare-at-price {
   white-space: pre;
 }
 
+/* Premier lien du menu (« vins ») toujours en rouge */
+.header-menu .menu-list__list-item:first-child .menu-list__link {
+  color: var(--pucelles-rouge) !important;
+}
+
+.header-menu .menu-list__list-item:first-child .menu-list__link:hover {
+  color: var(--pucelles-rouge-survol) !important;
+}
+
 /* Liens dans les textes enrichis : rouge du domaine, sans soulignement */
 .rte a {
   color: var(--pucelles-rouge);
