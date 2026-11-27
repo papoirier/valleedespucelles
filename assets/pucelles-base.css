@@ -79,12 +79,23 @@ product-price .compare-at-price {
   font-size: var(--pucelles-taille-texte) !important;
 }
 
-/* Menu du header, écrit comme une phrase à côté du logo : « vins, à propos, contact. »
-   Taille du texte courant, graisse normale. « vins » (1er lien) toujours en rouge.
+/* En-tête écrit comme une phrase : « domaine de la vallée des pucelles. vins, à propos, nous joindre. »
+   Menu en gras, même taille que le logo. « vins » (1er lien) toujours en rouge.
    (!important : Horizon impose la taille dans l'attribut style) */
+
+/* Point après le logo texte */
+.header-logo::after {
+  content: '.';
+}
+
+/* Un simple espace entre le logo et le menu (Horizon met un grand écart) */
+.header__column--left:has(header-menu) {
+  gap: 0;
+}
+
 .header-menu .menu-list {
   --menu-horizontal-gap: 0;
-
+  padding-inline-start: 0.3em;
 }
 
 .header-menu .menu-list__list-item:not([slot='overflow']) {
@@ -92,8 +103,8 @@ product-price .compare-at-price {
 }
 
 .header-menu .menu-list__link {
-  font-size: var(--pucelles-taille-texte) !important;
-  font-weight: 400 !important;
+  font-size: var(--font-size--md) !important;
+  font-weight: 700 !important;
   text-transform: lowercase !important;
   color: var(--pucelles-encre) !important;
   transition: color 0.2s ease;
@@ -117,8 +128,8 @@ product-price .compare-at-price {
 /* Ponctuation noire, hors des liens : virgule entre les liens, point après le dernier */
 .header-menu .menu-list__list-item:not([slot='overflow'], [slot='more'])::after {
   content: '.';
-  font-size: var(--pucelles-taille-texte);
-  font-weight: 400;
+  font-size: var(--font-size--md);
+  font-weight: 700;
   color: var(--pucelles-encre);
   white-space: pre;
 }
