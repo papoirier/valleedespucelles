@@ -189,11 +189,11 @@
     }
   },
   "home": {
-    "contact_html": "finally, here's how to <a href=\"{{ url }}\">reach us</a>.",
-    "contact_short_html": "how to <a href=\"{{ url }}\">reach us</a>.",
+    "contact_html": "Finally, sign up for our <a href=\"#newsletter-modal\">newsletter</a> or <a href=\"{{ url }}\">write to us</a>.",
+    "contact_short_html": "Sign up for our <a href=\"#newsletter-modal\">newsletter</a> or <a href=\"{{ url }}\">write to us</a>.",
     "cart_html": {
-      "one": "finally, you have 1 item in your <a href=\"{{ url }}\">cart</a>.",
-      "other": "finally, you have {{ count }} items in your <a href=\"{{ url }}\">cart</a>."
+      "one": "Finally, you have 1 item in your <a href=\"{{ url }}\">cart</a>.",
+      "other": "Finally, you have {{ count }} items in your <a href=\"{{ url }}\">cart</a>."
     }
   },
   "content": {
