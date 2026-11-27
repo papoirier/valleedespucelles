@@ -79,9 +79,43 @@ product-price .compare-at-price {
   font-size: var(--pucelles-taille-texte) !important;
 }
 
-/* Menu de navigation du header (taille imposée par Horizon dans l'attribut style) */
-.menu-list__link {
-  font-size: var(--pucelles-taille-texte) !important;
+/* Menu du header, écrit comme une phrase à côté du logo : « vins, à propos, contact »
+   Même taille et même graisse que le logo texte. Lien de la page en cours en rouge.
+   (!important : Horizon impose la taille dans l'attribut style) */
+.header-menu .menu-list {
+  --menu-horizontal-gap: 0;
+  padding-inline-start: 1em;
+}
+
+.header-menu .menu-list__list-item:not([slot='overflow']) {
+  flex-direction: row;
+}
+
+.header-menu .menu-list__link {
+  font-size: var(--font-size--md) !important;
+  font-weight: 700 !important;
+  text-transform: lowercase !important;
+  color: var(--pucelles-encre) !important;
+  transition: color 0.2s ease;
+}
+
+.header-menu .menu-list__link-title {
+  padding-inline: 0;
+}
+
+.header-menu .menu-list__link:hover,
+.header-menu .menu-list__link--active,
+.header-menu .menu-list__link[aria-current='page'] {
+  color: var(--pucelles-rouge) !important;
+}
+
+/* Virgule noire entre les liens (hors du lien, donc jamais rouge) */
+.header-menu .menu-list__list-item:not([slot='overflow'], [slot='more']):has(~ .menu-list__list-item:not([slot='overflow'], [slot='more']))::after {
+  content: ',\00a0';
+  font-size: var(--font-size--md);
+  font-weight: 700;
+  color: var(--pucelles-encre);
+  white-space: pre;
 }
 
 /* Liens dans les textes enrichis : rouge du domaine, sans soulignement */
