@@ -42,7 +42,7 @@
           "type": "text",
           "name": "Description",
           "settings": {
-            "text": "{{ closest.collection.description }}",
+            "text": "<p>{{ closest.collection.description }}</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -215,8 +215,8 @@
         }
       },
       "settings": {
-        "layout_type": "organic",
-        "product_card_size": "medium",
+        "layout_type": "grid",
+        "product_card_size": "extra-large",
         "mobile_product_card_size": "large",
         "enable_infinite_scroll": true,
         "products_per_page": 24,
