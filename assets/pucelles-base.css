@@ -203,3 +203,9 @@ localization-form * {
     display: none !important;
   }
 }
+/* Mobile : pas de logo (ni son point), seulement le menu hamburger */
+@media screen and (max-width: 749px) {
+  #header-component .header-logo {
+    display: none !important;
+  }
+}
