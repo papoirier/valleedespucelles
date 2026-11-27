@@ -84,7 +84,7 @@ product-price .compare-at-price {
    (!important : Horizon impose la taille dans l'attribut style) */
 .header-menu .menu-list {
   --menu-horizontal-gap: 0;
-  padding-inline-start: 1em;
+
 }
 
 .header-menu .menu-list__list-item:not([slot='overflow']) {
