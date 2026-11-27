@@ -2,12 +2,23 @@
   Renders tax and shipping information text based on the cart's tax and duties state.
   Mentions fees as well when `cart.checkout_fees_enabled` is true.
   Intended for use in a block similar to the text block.
+  When the `show_shipping_note` theme setting is off (no shipping), only taxes and fees are mentioned.
 
   @param {boolean} [has_discounts_enabled] - Whether discounts are enabled, used to display alternate tax/duty text.
 {%- enddoc -%}
 
 <small>
-  {%- if cart.checkout_fees_enabled -%}
+  {%- if settings.show_shipping_note == false -%}
+    {%- if cart.taxes_included and cart.checkout_fees_enabled -%}
+      {{ 'content.taxes_included_fees_at_checkout' | t }}
+    {%- elsif cart.taxes_included -%}
+      {{ 'content.taxes_included' | t }}
+    {%- elsif cart.checkout_fees_enabled -%}
+      {{ 'content.taxes_and_fees_at_checkout' | t }}
+    {%- else -%}
+      {{ 'content.taxes_at_checkout' | t }}
+    {%- endif -%}
+  {%- elsif cart.checkout_fees_enabled -%}
     {%- if cart.duties_included and cart.taxes_included -%}
       {%- if shop.shipping_policy.body == blank -%}
         {%- if has_discounts_enabled -%}

@@ -189,6 +189,9 @@
     "duties_included": "Frais de douane inclus.",
     "shipping_policy_html": "<a href=\"{{ link }}\">Expédition</a> calculée lors du paiement.",
     "taxes_included": "Taxes incluses.",
+    "taxes_at_checkout": "Taxes calculées lors du paiement.",
+    "taxes_and_fees_at_checkout": "Taxes et frais calculés lors du paiement.",
+    "taxes_included_fees_at_checkout": "Taxes incluses. Frais calculés lors du paiement.",
     "product_badge_sold_out": "Épuisé",
     "product_badge_sale": "Promotion",
     "grid_view": {
